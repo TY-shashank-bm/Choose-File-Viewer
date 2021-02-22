@@ -60,6 +60,21 @@ export default class ChooseFile extends React.Component {
       );
     }
 
+    let btn;
+    if(this.state.file){
+      btn=(
+        <>
+        <button
+            className="btn"
+            onClick={() => this.setState({ display: !this.state.display })}
+          >
+            <i className="far fa-eye" id="view"/>
+               View File
+          </button>
+        </>
+      )
+    }
+
     let inLine;
     this.state.display
       ? (inLine = {
@@ -74,15 +89,12 @@ export default class ChooseFile extends React.Component {
         });
     return (
       <>
+<div id="nav">
+  File Previewer
+</div>
         <div style={inLine}>
           <input type="file" onChange={this.handleChange} id="input" />
-          <button
-            className="btn"
-            onClick={() => this.setState({ display: !this.state.display })}
-          >
-            <i className="far fa-eye" />
-            View File
-          </button>
+          {btn}
 
           <br />
           {modell}

@@ -1,10 +1,9 @@
 import './App.css';
 
-import ChooseFile from './components/ChooseFile';
+import ChooseFile from './components/ChooseFile'
 function App() {
   return (
     <div className="App">
-   
      <ChooseFile/>
     </div>
   );
