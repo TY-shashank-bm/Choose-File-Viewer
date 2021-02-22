@@ -20,6 +20,10 @@ export default class ChooseFile extends React.Component {
       display: false,
       type: event.target.files[0].type,
     });
+    console.log(this.state.file);
+    console.log(this.state.type);
+
+    
     setTimeout(() => {
       console.log(this.state.type.includes("pdf"));
       if (this.state.type.includes("pdf")) {
@@ -30,6 +34,11 @@ export default class ChooseFile extends React.Component {
       if (this.state.type.includes("document")) {
         this.setState({
           fileType: "docx",
+        });
+      }
+      if (this.state.type.includes("sheet")) {
+        this.setState({
+          fileType: "xlsx",
         });
       }
     }, 1000);
